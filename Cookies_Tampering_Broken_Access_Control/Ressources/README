@@ -1,0 +1,15 @@
+Quand on se connecte, le serveur set un cookie sur le client
+
+Set-Cookie: I_am_admin=68934a3e9455fa72420237eb05902327; expires=Sat, 07-Mar-2026 20:22:17 GMT; Max-Age=3600
+
+La valeur de I_am_admin est d'une longueur de 32 characteres ce qui correspond a un hash MD5
+
+Apres crack avec john, hashcat ou crackstation comme presente precedemment, ou meme avec
+echo -n "false" | md5sum
+68934a3e9455fa72420237eb05902327
+
+On peut considerer cette variable comme un boolen donc
+echo -n "true" | md5sum
+b326b5062b2f0e69046810717534cb09
+
+Changer le cookie a true pour obtenir le flag.
